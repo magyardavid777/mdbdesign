@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MDBdesign — Digitális jelenlét, ami megkülönböztet</title>
   <meta name="description" content="Weblaptervezés, alkalmazásfejlesztés és logótervezés. Professzionális digitális megoldások vállalkozásoknak.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='%232a2a2a' stroke-width='6'/><path d='M70 15 L30 80 Q35 88 42 85 L78 25 Z' fill='%23e63030'/><path d='M30 80 Q25 95 28 98 Q34 94 42 85 Z' fill='%23c0392b'/><path d='M28 98 Q40 90 50 75' stroke='%232a2a2a' stroke-width='2' fill='none'/></svg>">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='none' stroke='%232a2a2a' stroke-width='6'/><path d='M68 14 L28 78 Q33 87 41 84 L76 24 Z' fill='%23e63030'/><path d='M28 78 Q22 95 27 98 Q34 93 41 84 Z' fill='%23c0392b'/></svg>">
+  <link rel="apple-touch-icon" href="assets/logo.png">
   <!-- Preconnect to font domains -->
   <link rel="preconnect" href="https://api.fontshare.com">
 
@@ -97,11 +104,14 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
       <li><a href="#referenciak">Referenciák</a></li>
+      <li><a href="#folyamat">Folyamat</a></li>
       <li><a href="#rolam">Rólam</a></li>
       <li><a href="#arlista">Árlista</a></li>
+      <li><a href="#gyik">GYIK</a></li>
       <li><a href="#kontakt">Kapcsolat</a></li>
     </ul>
     <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Témaváltás">🌙</button>
       <a href="#idopont" class="btn-nav">Időpontfoglalás</a>
       <button class="burger" id="burger" aria-label="Menü">
         <span></span><span></span><span></span>
@@ -350,6 +360,68 @@
   </div>
 </section>
 
+
+<!-- FOLYAMATÁBRA -->
+<section class="section" id="folyamat">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Hogyan dolgozunk</span>
+      <h2>Egyszerű és átlátható folyamat</h2>
+      <p>Négy lépésben az elképzeléstől a kész weboldalig — végig Ön is látja mi történik.</p>
+    </div>
+    <div class="process-steps">
+      <div class="pstep">
+        <div class="pstep-num">01</div>
+        <div class="pstep-connector"></div>
+        <div class="pstep-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>Egyeztetés</h3>
+        <p>Ingyenes 30 perces konzultáción megbeszéljük az Ön elképzeléseit, céljait és a projekt részleteit.</p>
+        <span class="pstep-time">~30 perc</span>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">02</div>
+        <div class="pstep-connector"></div>
+        <div class="pstep-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <h3>Tervezés</h3>
+        <p>Elkészítjük a design terveket Figma-ban. Ön véleményezi, kérhet módosításokat — addig finomítjuk, amíg tökéletes.</p>
+        <span class="pstep-time">3–7 nap</span>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">03</div>
+        <div class="pstep-connector"></div>
+        <div class="pstep-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3>Fejlesztés</h3>
+        <p>A jóváhagyott terv alapján elkészítjük az oldalt. Folyamatos visszajelzés, Ön minden fázisban látja a haladást.</p>
+        <span class="pstep-time">1–3 hét</span>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">04</div>
+        <div class="pstep-connector last"></div>
+        <div class="pstep-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3>Átadás & Support</h3>
+        <p>Élesítjük az oldalt, betanítjuk a kezelést, és az egyeztetett ideig support csomaggal segítjük az indulást.</p>
+        <span class="pstep-time">+ support időszak</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- RÓLAM -->
 <section class="section" id="rolam">
   <div class="container">
@@ -504,6 +576,74 @@
   </div>
 </section>
 
+
+<!-- GYIK -->
+<section class="section" id="gyik">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">GYIK</span>
+      <h2>Gyakran ismételt kérdések</h2>
+      <p>Ha nem találja a választ, írjon bátran!</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Mennyi idő alatt készül el egy weboldal?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Az egyszerűbb weboldalak 1–2 hét alatt elkészülnek, a komplexebb projektek (webshop, egyedi alkalmazás) 3–6 hétig tartanak. Az első egyeztetésen pontosabb becslést adok az Ön projektjéhez.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Mi kell az induláshoz? Mit kell előkészítenem?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Alapvetően elég az elképzelés és a tartalom (szövegek, képek, logó). Ha nincs még logója vagy szövege, abban is segítünk. Az induláshoz szükséges domain és tárhelyet is be tudjuk szerezni Önnek.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Az elkészült oldalt én is tudom majd szerkeszteni?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Igen! Ha CMS-t (pl. WordPress) választ, az oldal tartalmát Ön is könnyen szerkesztheti technikai tudás nélkül. Az átadáskor betanítást is tartunk, hogy magabiztosan kezelje az oldalt.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Hogyan zajlik a fizetés?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Általában 50% előleg a projekt indulásakor, 50% az átadáskor. Nagyobb projekteknél mérföldkövek szerint is lehetséges a részletfizetés. Számlát minden esetben állítunk ki.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Mi történik az átadás után? Van garancia?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Minden csomag tartalmaz support időszakot (1–3 hónap), amely alatt az esetleges hibákat díjmentesen javítjuk. Ezen túl havi karbantartási csomagot is kínálunk, ha hosszú távú partnert keres.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Tudnak segíteni domain és tárhely megvásárlásában?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Igen, teljes körűen segítünk a domain regisztrációban és a megfelelő tárhely kiválasztásában. A projekt indításakor ezeket is intézzük, Önnek csak jóvá kell hagyni.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- IDŐPONTFOGLALÁS -->
 <section class="section bg-light" id="idopont">
   <div class="container">
@@ -642,8 +782,10 @@
           <p class="footer-col-title">Navigáció</p>
           <a href="#szolgaltatasok">Szolgáltatások</a>
           <a href="#referenciak">Referenciák</a>
+          <a href="#folyamat">Folyamat</a>
           <a href="#rolam">Rólam</a>
           <a href="#arlista">Árlista</a>
+          <a href="#gyik">GYIK</a>
         </div>
         <div class="fl-col">
           <p class="footer-col-title">Kapcsolat</p>
@@ -669,6 +811,21 @@
     </div>
   </div>
 </footer>
+
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie értesítés" aria-live="polite">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>🍪 Süti beállítások</strong>
+      <p>Weboldalunk sütiket (cookie-kat) használ a jobb felhasználói élmény érdekében. Az "Elfogadom" gombra kattintva hozzájárul a sütik használatához. További információ az <a href="#" class="cookie-link">Adatvédelmi tájékoztatóban</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button class="btn-ghost cookie-decline" id="cookieDecline">Csak szükséges</button>
+      <button class="btn-primary cookie-accept" id="cookieAccept">Elfogadom</button>
+    </div>
+  </div>
+</div>
 
 <script src="js/main.js" defer></script>
 </body>

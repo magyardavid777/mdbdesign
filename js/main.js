@@ -181,3 +181,63 @@ if (window.innerWidth > 1024 && !window.matchMedia('(prefers-reduced-motion: red
 }
 
 }); // end DOMContentLoaded
+
+
+/* ===== DARK MODE ===== */
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme') || 'light';
+if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+if (themeToggle) {
+  themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    themeToggle.textContent = isDark ? '🌙' : '☀️';
+  });
+}
+
+/* ===== COOKIE BANNER ===== */
+const cookieBanner = document.getElementById('cookieBanner');
+const cookieAccept = document.getElementById('cookieAccept');
+const cookieDecline = document.getElementById('cookieDecline');
+
+if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+  setTimeout(() => cookieBanner.classList.add('visible'), 1500);
+}
+function hideCookie(consent) {
+  cookieBanner.classList.remove('visible');
+  cookieBanner.classList.add('hidden');
+  localStorage.setItem('cookieConsent', consent);
+}
+if (cookieAccept)  cookieAccept.addEventListener('click',  () => hideCookie('accepted'));
+if (cookieDecline) cookieDecline.addEventListener('click', () => hideCookie('declined'));
+
+/* ===== GYIK ACCORDION ===== */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    // Close all
+    document.querySelectorAll('.faq-q').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      btn.nextElementSibling.classList.add('open');
+    }
+  });
+});
+
+/* ===== PROCESS STEPS REVEAL ===== */
+document.querySelectorAll('.pstep').forEach((el, i) => {
+  el.classList.add('reveal');
+  el.classList.add('delay-' + Math.min(i, 3));
+  revealObs.observe(el);
+});
+document.querySelectorAll('.faq-item').forEach((el, i) => {
+  el.classList.add('reveal');
+  if (i > 0) el.classList.add('delay-' + Math.min(i % 3, 3));
+  revealObs.observe(el);
+});
