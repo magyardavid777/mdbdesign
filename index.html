@@ -5,9 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MDBdesign — Digitális jelenlét, ami megkülönböztet</title>
   <meta name="description" content="Weblaptervezés, alkalmazásfejlesztés és logótervezés. Professzionális digitális megoldások vállalkozásoknak.">
+  <!-- Preconnect to font domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Critical CSS inline (above the fold) -->
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    .loader{position:fixed;inset:0;background:#fff;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+    .loader-logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:300;letter-spacing:6px;color:#1a1a1a}
+    .loader-logo span{color:#e63030}
+    .loader-line{width:140px;height:1px;background:#e8e8e8;overflow:hidden}
+    .loader-fill{height:100%;background:#e63030;animation:loaderAnim 1.6s ease forwards}
+    @keyframes loaderAnim{from{width:0}to{width:100%}}
+    .header{position:fixed;top:0;left:0;right:0;z-index:800;transition:background .3s,box-shadow .3s}
+    .nav{display:flex;align-items:center;height:72px;gap:48px;max-width:1180px;margin:0 auto;padding:0 40px}
+    .logo-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:400;letter-spacing:3px;color:#1a1a1a;display:none}
+    .logo-text em{color:#e63030;font-style:normal}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+    .hero-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,7vw,88px);font-weight:300;line-height:1.08;color:#1a1a1a;margin-bottom:24px;letter-spacing:-1px}
+    .hero-title em{font-style:italic;color:#e63030}
+  </style>
+
+  <!-- Non-blocking font load -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org LocalBusiness structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MDBdesign",
+    "description": "Weblaptervezés, alkalmazásfejlesztés és logótervezés. Professzionális digitális megoldások vállalkozásoknak.",
+    "url": "https://magyardavid777.github.io/mdbdesign/",
+    "telephone": "+36301234567",
+    "email": "info@mdbdesign.hu",
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "89000-349000 HUF",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "HU"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Webdesign szolgáltatások",
+      "itemListElement": [
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Weblaptervezés"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Alkalmazásfejlesztés"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Logótervezés"}}
+      ]
+    }
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MDBdesign — Digitális jelenlét, ami megkülönböztet">
+  <meta property="og:description" content="Professzionális weboldalak, alkalmazások és logók vállalkozásoknak.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://magyardavid777.github.io/mdbdesign/">
+  <meta property="og:locale" content="hu_HU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MDBdesign — Digitális jelenlét, ami megkülönböztet">
+  <meta name="twitter:description" content="Professzionális weboldalak, alkalmazások és logók vállalkozásoknak.">
+
+  <!-- Extra SEO -->
+  <link rel="canonical" href="https://magyardavid777.github.io/mdbdesign/">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="MDBdesign">
 </head>
 <body>
 
@@ -21,7 +91,7 @@
 <header class="header" id="header">
   <nav class="nav container">
     <a href="#" class="logo">
-      <img src="assets/logo.png" alt="MDBdesign logó" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="assets/logo.png" alt="MDBdesign logó" class="logo-img" loading="eager" width="120" height="38" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="logo-text" style="display:none">MDB<em>design</em></span>
     </a>
     <ul class="nav-links" id="navLinks">
@@ -73,7 +143,7 @@
     </div>
     <div class="hero-stats">
       <div class="hstat">
-        <strong>20+</strong>
+        <strong>50+</strong>
         <span>Elkészített projekt</span>
       </div>
       <div class="hstat-sep"></div>
@@ -283,9 +353,9 @@
       </div>
       <div class="about-text">
         <span class="section-tag">Rólam</span>
-        <h2>Szia, Magyar Dávid vagyok,<br><em>az MDBdesign alapítója</em></h2>
-        <p>Ön is megérdemli a profi online jelenlétet.</p>
-        <p>Évek óta foglalkozom design tervezéssel, eddig leginkább hobbi célból</p>
+        <h2>Szia, én vagyok<br><em>az MDBdesign alapítója</em></h2>
+        <p>Szenvedélyem a digitális világ és az emberek kapcsolata. Hiszem, hogy minden vállalkozásnak — legyen az egy kis helyi bolt vagy egy növekvő startup — megérdemli a profi online jelenlétet.</p>
+        <p>Évek óta segítem ügyfeleimet abban, hogy weboldaluk ne csak szép legyen, hanem ténylegesen ügyfelet hozzon és értéket teremtsen.</p>
         <div class="skills">
           <div class="skill-tag">HTML / CSS</div>
           <div class="skill-tag">JavaScript</div>
@@ -350,7 +420,7 @@
   <div class="container">
     <div class="section-head">
       <span class="section-tag">Csomagok</span>
-      <h2>Árazás</h2>
+      <h2>Átlátható árazás</h2>
       <p>Három csomag, három igényszint. Minden projekt egyedi — az árak tájékoztató jellegűek.</p>
     </div>
     <div class="pricing-grid">
@@ -424,13 +494,28 @@
   <div class="container">
     <div class="section-head">
       <span class="section-tag">Egyeztetés</span>
-      <h2>Visszahívást kérek</h2>
+      <h2>Foglaljon ingyenes konzultációt</h2>
       <p>30 perces, kötelezettségmentes konzultáció — megbeszéljük az Ön projektjét és lehetőségeit.</p>
     </div>
     <div class="calendly-wrap">
+      <div class="calendly-placeholder" id="calendlyPlaceholder">
+        <div class="cal-inner">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e63030" stroke-width="1.5">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
+          </svg>
+          <h3>Calendly naptár</h3>
+          <p>Ide kerül a Calendly időpontfoglaló widget.<br>
+          A beágyazáshoz cserélje le az alábbi linket a saját Calendly URL-jére.</p>
+          <code>data-url="https://calendly.com/az-on-neve"</code>
+          <a href="https://calendly.com" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block">
+            Calendly beállítása →
+          </a>
+        </div>
+      </div>
       <!-- Calendly inline widget -->
-      <div class="calendly-inline-widget" data-url="https://calendly.com/magyar-david777/30min" style="min-width:320px;height:700px;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/az-on-neve" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
     </div>
   </div>
 </section>
@@ -449,20 +534,20 @@
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
-            <span>info@mdbdesign.hu</span>
+            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="127b7c747d527f76707677617b757c3c7a67">[email&#160;protected]</a></span>
           </div>
           <div class="cinfo">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.25-.44c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
             </svg>
-            <span>+36 30 419 5286</span>
+            <span>+36 30 123 4567</span>
           </div>
           <div class="cinfo">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <circle cx="12" cy="12" r="10"/>
               <polyline points="12 6 12 12 16 14"/>
             </svg>
-            <span>Hétfő–Péntek, 09:00–17:00</span>
+            <span>Hétfő–Péntek, 09:00–18:00</span>
           </div>
         </div>
         <div class="social-links">
@@ -518,7 +603,7 @@
           </div>
           <button type="submit" class="btn-primary full">Üzenet küldése</button>
           <div class="form-success" id="formSuccess">
-            ✓ Köszönöm! Hamarosan felveszem Önnel a kapcsolatot.
+            ✓ Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot.
           </div>
         </form>
       </div>
@@ -531,7 +616,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo.png" alt="MDBdesign" class="footer-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <img src="assets/logo.png" alt="MDBdesign" class="footer-logo" loading="lazy" width="100" height="32" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <span class="footer-logo-text" style="display:none">MDB<em>design</em></span>
         <p>Digitális jelenlét, ami megkülönböztet.</p>
       </div>
@@ -545,8 +630,8 @@
         </div>
         <div class="fl-col">
           <h4>Kapcsolat</h4>
-          <a href="mailto:info@mdbdesign.hu">info@mdbdesign.hu</a>
-          <a href="tel:+36304195286">+36 30 419 5286</a>
+          <a href="/cdn-cgi/l/email-protection#7b12151d143b161f191f1e08121c1555130e"><span class="__cf_email__" data-cfemail="325b5c545d725f56505657415b555c1c5a47">[email&#160;protected]</span></a>
+          <a href="tel:+36301234567">+36 30 123 4567</a>
           <span>Hétfő–Péntek</span>
           <span>09:00–18:00</span>
         </div>
@@ -559,15 +644,4 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 MDBdesign Studio — Minden jog fenntartva</span>
-      <div class="footer-legal">
-        <a href="#">Adatvédelmi tájékoztató</a>
-        <a href="#">ÁSZF</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
-</body>
-</html>
+      <span>© 2024 MDBdesign

@@ -4,6 +4,11 @@
    Palette: White / Light Grey / Dark Charcoal / Red #e63030
    ============================================================ */
 
+/* Font-display swap — prevents invisible text during load */
+@font-face { font-family:'Cormorant Garamond'; font-display:swap; src:local('Cormorant Garamond'); }
+@font-face { font-family:'DM Sans'; font-display:swap; src:local('DM Sans'); }
+@font-face { font-family:'DM Mono'; font-display:swap; src:local('DM Mono'); }
+
 :root {
   --red:       #e63030;
   --red-light: #ff6b6b;
@@ -30,7 +35,12 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-img { display: block; max-width: 100%; }
+
+/* Performance optimizations */
+img { display:block; max-width:100%; height:auto; }
+img[loading=lazy] { content-visibility: auto; }
+* { -webkit-font-smoothing: antialiased; text-rendering: optimizeSpeed; }
+
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 input, textarea, select {
@@ -199,7 +209,7 @@ ul { list-style: none; }
 .btn-ghost.full { width: 100%; text-align: center; }
 
 /* ===== SECTIONS ===== */
-.section { padding: 100px 0; }
+.section { padding: 100px 0; content-visibility: auto; contain-intrinsic-size: 0 500px; }
 .bg-light { background: var(--bg-light); }
 
 .section-head {
