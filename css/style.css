@@ -99,12 +99,15 @@ ul { list-style: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 800;
-  transition: background .3s, box-shadow .3s;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 var(--border);
+  transition: box-shadow .3s, background .3s;
 }
 .header.scrolled {
-  background: rgba(255,255,255,.95);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 var(--border);
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 2px 16px rgba(0,0,0,.07);
 }
 .nav {
   display: flex;
@@ -261,26 +264,26 @@ ul { list-style: none; }
 .hero-circle {
   position: absolute;
   border-radius: 50%;
-  opacity: .04;
+  pointer-events: none;
 }
 .c1 {
-  width: 600px; height: 600px;
-  background: var(--red);
-  top: -200px; right: -100px;
-  border: 1px solid var(--dark);
+  width: 560px; height: 560px;
+  background: radial-gradient(circle at 40% 40%, rgba(230,48,48,.06), transparent 70%);
+  border: 1px solid rgba(230,48,48,.08);
+  top: -180px; right: -80px;
 }
 .c2 {
-  width: 300px; height: 300px;
+  width: 280px; height: 280px;
   background: transparent;
-  border: 1px solid var(--dark);
-  bottom: 100px; right: 200px;
-  opacity: .06;
+  border: 1px solid rgba(0,0,0,.05);
+  bottom: 120px; right: 220px;
 }
 .hero-feather {
   position: absolute;
-  right: 0; top: 50%;
+  right: -20px; top: 50%;
   transform: translateY(-50%);
-  width: 480px; height: 580px;
+  width: 520px; height: 620px;
+  pointer-events: none;
   opacity: 1;
 }
 .hero-feather svg { width: 100%; height: 100%; }
@@ -1065,19 +1068,23 @@ ul { list-style: none; }
     display: none;
     position: absolute;
     top: 72px; left: 0; right: 0;
-    background: rgba(255,255,255,.97);
-    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,.99);
+    backdrop-filter: blur(16px);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     flex-direction: column;
     padding: 16px 20px 24px;
     gap: 2px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 10px 0; border-bottom: 1px solid var(--border); }
   .nav-links a::after { display: none; }
-  .burger { display: flex; }
-  .btn-nav { display: none; }
+/* Mobile logo always shows text */
+@media (max-width: 768px) {
+  .logo-text { display: block !important; }
+  .logo-img  { display: none  !important; }
+}
   .section { padding: 64px 0; }
   .hero-title { font-size: clamp(44px, 12vw, 68px); }
   .hero-feather { width: 260px; height: 320px; right: -40px; opacity: .4; }
