@@ -1,21 +1,36 @@
+
+/* ===== SKIP LINK (accessibility) ===== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--dark);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  z-index: 10000;
+  transition: top .2s;
+}
+.skip-link:focus { top: 20px; }
+
 /* ============================================================
    MDBdesign — Premium Minimal Portfolio
-   Cormorant Garamond + DM Sans
+   Clash Display + Cabinet Grotesk
    Palette: White / Light Grey / Dark Charcoal / Red #e63030
    ============================================================ */
 
 /* Font-display swap — prevents invisible text during load */
-@font-face { font-family:'Cormorant Garamond'; font-display:swap; src:local('Cormorant Garamond'); }
-@font-face { font-family:'DM Sans'; font-display:swap; src:local('DM Sans'); }
-@font-face { font-family:'DM Mono'; font-display:swap; src:local('DM Mono'); }
+@font-face { font-family:'Clash Display'; font-display:swap; src:local('Clash Display'); }
+@font-face { font-family:'Cabinet Grotesk'; font-display:swap; src:local('Cabinet Grotesk'); }
 
 :root {
   --red:       #e63030;
   --red-light: #ff6b6b;
   --dark:      #1a1a1a;
   --dark2:     #2d2d2d;
-  --grey:      #6b6b6b;
-  --grey-light:#a0a0a0;
+  --grey:      #555555;
+  --grey-light:#888888;
   --border:    #e8e8e8;
   --bg:        #ffffff;
   --bg-light:  #f7f6f4;
@@ -29,7 +44,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   background: var(--bg);
   color: var(--dark);
   overflow-x: hidden;
@@ -38,13 +53,18 @@ body {
 
 /* Performance optimizations */
 img { display:block; max-width:100%; height:auto; }
+
+/* Logo image - correct aspect ratio */
+.logo-img { height: 38px; width: auto; max-width: 160px; object-fit: contain; }
+.footer-logo { height: 32px; width: auto; max-width: 140px; object-fit: contain; }
+
 img[loading=lazy] { content-visibility: auto; }
 * { -webkit-font-smoothing: antialiased; text-rendering: optimizeSpeed; }
 
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 input, textarea, select {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 14px;
 }
 ul { list-style: none; }
@@ -68,10 +88,10 @@ ul { list-style: none; }
 }
 .loader.out { opacity: 0; visibility: hidden; animation: none; }
 .loader-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Clash Display', system-ui, sans-serif;
   font-size: 32px;
-  font-weight: 300;
-  letter-spacing: 6px;
+  font-weight: 400;
+  letter-spacing: 2px;
   color: var(--dark);
 }
 .loader-logo span { color: var(--red); }
@@ -122,10 +142,10 @@ ul { list-style: none; }
 }
 .logo-img { height: 38px; width: auto; }
 .logo-text {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Clash Display', system-ui, sans-serif;
   font-size: 22px;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: var(--dark);
 }
 .logo-text em { color: var(--red); font-style: normal; }
@@ -225,9 +245,9 @@ ul { list-style: none; }
   margin-bottom: 56px;
 }
 .section-head h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(34px, 4vw, 50px);
-  font-weight: 300;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
   line-height: 1.2;
   color: var(--dark);
   margin: 8px 0 16px;
@@ -241,9 +261,9 @@ ul { list-style: none; }
 }
 .section-tag {
   display: inline-block;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 10px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--red);
 }
@@ -300,7 +320,7 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 11px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -313,16 +333,16 @@ ul { list-style: none; }
   background: var(--red);
 }
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(52px, 7vw, 88px);
-  font-weight: 300;
+  font-family: 'Clash Display', system-ui, sans-serif;
+  font-size: clamp(48px, 6.5vw, 84px);
+  font-weight: 700;
   line-height: 1.08;
   color: var(--dark);
   margin-bottom: 24px;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 .hero-title em {
-  font-style: italic;
+  
   color: var(--red);
 }
 .hero-sub {
@@ -345,12 +365,12 @@ ul { list-style: none; }
 }
 .hstat strong {
   display: block;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Clash Display', system-ui, sans-serif;
   font-size: 38px;
   font-weight: 400;
   color: var(--dark);
   line-height: 1;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 .hstat span {
   display: block;
@@ -378,9 +398,9 @@ ul { list-style: none; }
 }
 @keyframes scrollPulse { 0%,100%{opacity:.4;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(1.1)} }
 .hero-scroll span {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 9px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--grey-light);
 }
@@ -419,7 +439,7 @@ ul { list-style: none; }
   color: var(--red);
 }
 .service-card h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 24px;
   font-weight: 400;
   color: var(--dark);
@@ -488,17 +508,17 @@ ul { list-style: none; }
   margin: 0 auto;
 }
 .services-quote p {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 18px;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 400;
+  
   color: var(--dark2);
   line-height: 1.7;
 }
 .quote-mark {
   position: absolute;
   top: 10px; left: 16px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 60px;
   color: var(--red);
   opacity: .2;
@@ -560,14 +580,14 @@ ul { list-style: none; }
 }
 .pitem:hover .pitem-overlay { opacity: 1; }
 .pitem-overlay span {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 400;
   color: #fff;
   letter-spacing: 1px;
 }
 .pitem-overlay em {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 10px;
   letter-spacing: 2px;
   color: rgba(255,255,255,.6);
@@ -587,7 +607,7 @@ ul { list-style: none; }
   color: var(--dark);
 }
 .pitem-info span {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 10px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -619,7 +639,7 @@ ul { list-style: none; }
   gap: 12px;
 }
 .about-img-inner span {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -636,14 +656,14 @@ ul { list-style: none; }
 }
 .about-text .section-tag { margin-bottom: 12px; display: block; }
 .about-text h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: clamp(32px, 3.5vw, 46px);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--dark);
   margin-bottom: 24px;
 }
-.about-text h2 em { font-style: italic; color: var(--red); }
+.about-text h2 em {  color: var(--red); }
 .about-text p {
   font-size: 15px;
   color: var(--grey);
@@ -691,10 +711,10 @@ ul { list-style: none; }
   margin-bottom: 16px;
 }
 .tcard p {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 17px;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 400;
+  
   line-height: 1.7;
   color: var(--dark2);
   margin-bottom: 24px;
@@ -766,9 +786,9 @@ ul { list-style: none; }
 .pcard-head { margin-bottom: 28px; }
 .pcard-tag {
   display: block;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 10px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--grey-light);
   margin-bottom: 14px;
@@ -780,7 +800,7 @@ ul { list-style: none; }
   margin-bottom: 12px;
 }
 .pcard-price strong {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Clash Display', system-ui, sans-serif;
   font-size: 48px;
   font-weight: 400;
   color: var(--dark);
@@ -848,9 +868,9 @@ ul { list-style: none; }
   padding: 48px 40px;
 }
 .cal-inner h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 28px;
-  font-weight: 300;
+  font-weight: 400;
   margin: 20px 0 10px;
   color: var(--dark);
 }
@@ -863,7 +883,7 @@ ul { list-style: none; }
 }
 .cal-inner code {
   display: block;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 12px;
   background: var(--bg-light);
   border: 1px solid var(--border);
@@ -882,14 +902,14 @@ ul { list-style: none; }
   align-items: start;
 }
 .contact-left h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: clamp(36px, 4vw, 52px);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--dark);
   margin: 10px 0 20px;
 }
-.contact-left h2 em { font-style: italic; color: var(--red); }
+.contact-left h2 em {  color: var(--red); }
 .contact-left > p {
   font-size: 15px;
   color: var(--grey);
@@ -990,9 +1010,9 @@ ul { list-style: none; }
 }
 .footer-brand .footer-logo { height: 36px; width: auto; }
 .footer-logo-text {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 4px;
   color: #fff;
   margin-bottom: 14px;
@@ -1010,10 +1030,10 @@ ul { list-style: none; }
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
-.fl-col h4 {
-  font-family: 'DM Mono', monospace;
+.fl-col h4, .footer-col-title {
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
   font-size: 9px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(255,255,255,.3);
   margin-bottom: 16px;
