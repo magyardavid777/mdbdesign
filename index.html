@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDBdesign — Digitális jelenlét, ami megkülönböztet</title>
+  <meta name="description" content="Weblaptervezés, alkalmazásfejlesztés és logótervezés. Professzionális digitális megoldások vállalkozásoknak.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-logo">MDB<span>design</span></div>
+  <div class="loader-line"><div class="loader-fill"></div></div>
+</div>
+
+<!-- NAV -->
+<header class="header" id="header">
+  <nav class="nav container">
+    <a href="#" class="logo">
+      <img src="assets/logo.png" alt="MDBdesign logó" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-text" style="display:none">MDB<em>design</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="#referenciak">Referenciák</a></li>
+      <li><a href="#rolam">Rólam</a></li>
+      <li><a href="#arlista">Árlista</a></li>
+      <li><a href="#kontakt">Kapcsolat</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#idopont" class="btn-nav">Időpontfoglalás</a>
+      <button class="burger" id="burger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="fooldal">
+  <div class="hero-bg">
+    <div class="hero-circle c1"></div>
+    <div class="hero-circle c2"></div>
+    <div class="hero-feather">
+      <!-- SVG toll motívum háttérbe -->
+      <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.07">
+        <ellipse cx="200" cy="200" rx="160" ry="160" stroke="#2a2a2a" stroke-width="3"/>
+        <path d="M280 40 L120 380 Q140 400 160 390 L310 80 Z" fill="#e63030"/>
+        <path d="M120 380 Q100 420 110 440 Q130 430 160 390 Z" fill="#c0392b" opacity="0.6"/>
+        <path d="M120 380 Q160 360 180 320" stroke="#c0392b" stroke-width="1.5" opacity="0.4"/>
+        <path d="M115 385 Q110 450 120 470" stroke="#2a2a2a" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      Weblaptervezés &amp; Fejlesztés
+    </div>
+    <h1 class="hero-title">
+      Digitális jelenlét,<br>
+      <em>ami megkülönböztet.</em>
+    </h1>
+    <p class="hero-sub">Professzionális weboldalak, alkalmazások és logók — amelyek valóban dolgoznak az Ön vállalkozásáért.</p>
+    <div class="hero-cta">
+      <a href="#kontakt" class="btn-primary">Ingyenes ajánlat kérése</a>
+      <a href="#referenciak" class="btn-ghost">Referenciák megtekintése</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <strong>20+</strong>
+        <span>Elkészített projekt</span>
+      </div>
+      <div class="hstat-sep"></div>
+      <div class="hstat">
+        <strong>100%</strong>
+        <span>Elégedett ügyfél</span>
+      </div>
+      <div class="hstat-sep"></div>
+      <div class="hstat">
+        <strong>5+</strong>
+        <span>Év tapasztalat</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Görgessen</span>
+  </div>
+</section>
+
+<!-- SZOLGÁLTATÁSOK -->
+<section class="section" id="szolgaltatasok">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Mit kínálunk</span>
+      <h2>Válasszon szolgáltatásaink közül</h2>
+      <p>Minden projekt egyedi figyelmet kap. Nézze meg részletesen, miben tudunk segíteni.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card active" data-service="web">
+        <div class="sc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3>Weblaptervezés</h3>
+        <p>Egyedi, reszponzív weboldalak tervezése és kivitelezése, amelyek tükrözik vállalkozása személyiségét.</p>
+        <div class="sc-details">
+          <ul>
+            <li>Egyedi design tervezés</li>
+            <li>Mobil-barát kivitelezés</li>
+            <li>SEO-optimalizált struktúra</li>
+            <li>Gyors betöltési sebesség</li>
+            <li>CMS integráció (igény szerint)</li>
+            <li>2 hónap ingyenes support</li>
+          </ul>
+          <a href="#kontakt" class="sc-cta">Ajánlatot kérek →</a>
+        </div>
+        <div class="sc-arrow">→</div>
+      </div>
+      <div class="service-card" data-service="app">
+        <div class="sc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1"/>
+          </svg>
+        </div>
+        <h3>Alkalmazásfejlesztés</h3>
+        <p>Saját alkalmazások fejlesztése mobilra és webre, amelyek megkönnyítik vállalkozása működését.</p>
+        <div class="sc-details">
+          <ul>
+            <li>Web alkalmazások</li>
+            <li>Mobil-barát PWA megoldások</li>
+            <li>API integrációk</li>
+            <li>Adminisztrációs felületek</li>
+            <li>Adatbázis tervezés</li>
+            <li>Folyamatos karbantartás</li>
+          </ul>
+          <a href="#kontakt" class="sc-cta">Ajánlatot kérek →</a>
+        </div>
+        <div class="sc-arrow">→</div>
+      </div>
+      <div class="service-card" data-service="logo">
+        <div class="sc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Logótervezés</h3>
+        <p>Emlékezetes, professzionális logó és arculat tervezés, amely megkülönbözteti vállalkozását.</p>
+        <div class="sc-details">
+          <ul>
+            <li>Logó koncepciók (3 variáció)</li>
+            <li>Teljes brand identity</li>
+            <li>Névjegykártya design</li>
+            <li>Közösségi média csomagok</li>
+            <li>Vektoros forrásfájlok</li>
+            <li>Korlátlan felhasználási jog</li>
+          </ul>
+          <a href="#kontakt" class="sc-cta">Ajánlatot kérek →</a>
+        </div>
+        <div class="sc-arrow">→</div>
+      </div>
+    </div>
+    <div class="services-quote">
+      <span class="quote-mark">"</span>
+      <p>Az ember általában olcsóbb a vizuális dolgokra koncentrál és nem az információra. Egy jól megtervezett weboldal nem csak szép — dolgozik Önért, még akkor is, amikor Ön nem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCIÁK -->
+<section class="section bg-light" id="referenciak">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Munkáink</span>
+      <h2>Referenciák</h2>
+      <p>Néhány kiválasztott projekt, amelyen büszkék vagyunk.</p>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Összes</button>
+      <button class="filter-btn" data-filter="web">Weboldal</button>
+      <button class="filter-btn" data-filter="app">Alkalmazás</button>
+      <button class="filter-btn" data-filter="logo">Logó</button>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid">
+      <div class="pitem" data-cat="web">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+          <div class="pitem-overlay">
+            <span>Team AGTG</span>
+            <em>Esport weboldal</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>Team AGTG</h4>
+          <span>Weboldal</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="web">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#f5f0eb,#e8ddd0)">
+          <div class="pitem-overlay">
+            <span>Kovács Ügyvédi Iroda</span>
+            <em>Prémium weboldal</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>Kovács Ügyvédi Iroda</h4>
+          <span>Weboldal</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="logo">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#fff,#f0f0f0)">
+          <div class="pitem-overlay">
+            <span>FlowBake Pékség</span>
+            <em>Logó &amp; arculat</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>FlowBake Pékség</h4>
+          <span>Logó</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="app">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#0f2027,#203a43)">
+          <div class="pitem-overlay">
+            <span>BookIt Foglalórendszer</span>
+            <em>Web alkalmazás</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>BookIt Foglalórendszer</h4>
+          <span>Alkalmazás</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="web">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#2d1b69,#11998e)">
+          <div class="pitem-overlay">
+            <span>Zöld Kert Kertészet</span>
+            <em>Weboldal &amp; webshop</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>Zöld Kert Kertészet</h4>
+          <span>Weboldal</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="logo">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#1a1a1a,#333)">
+          <div class="pitem-overlay">
+            <span>NightOwl Étterem</span>
+            <em>Teljes arculat</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>NightOwl Étterem</h4>
+          <span>Logó</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÓLAM -->
+<section class="section" id="rolam">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-placeholder">
+          <div class="about-img-inner">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>Fotó hamarosan</span>
+          </div>
+        </div>
+        <div class="about-accent-line"></div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Rólam</span>
+        <h2>Szia, Magyar Dávid vagyok,<br><em>az MDBdesign alapítója</em></h2>
+        <p>Ön is megérdemli a profi online jelenlétet.</p>
+        <p>Évek óta foglalkozom design tervezéssel, eddig leginkább hobbi célból</p>
+        <div class="skills">
+          <div class="skill-tag">HTML / CSS</div>
+          <div class="skill-tag">JavaScript</div>
+          <div class="skill-tag">UI/UX Design</div>
+          <div class="skill-tag">Figma</div>
+          <div class="skill-tag">WordPress</div>
+          <div class="skill-tag">Branding</div>
+        </div>
+        <a href="#kontakt" class="btn-primary" style="margin-top:32px;display:inline-block">Vegyük fel a kapcsolatot</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section bg-light" id="velemenyek">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Visszajelzések</span>
+      <h2>Mit mondanak ügyfeleink</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Pontosan azt kaptuk, amit elképzeltünk — sőt, még annál is többet. A weboldal azóta megduplázta az online érdeklődőink számát."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">KP</div>
+          <div>
+            <strong>Kovács Péter</strong>
+            <span>Ügyvezető, Kovács Kft.</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard featured">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Gyors, precíz munka és kiváló kommunikáció. Az új logónk azóta az egyik legfontosabb identitásjelünk lett. Mindenkinek ajánlom!"</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">SN</div>
+          <div>
+            <strong>Szabó Nikolett</strong>
+            <span>Tulajdonos, FlowBake</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"A foglalórendszerünk azóta sokkal gördülékenyebben működik. Rengeteg adminisztrációs időt spórolunk meg minden héten."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">NT</div>
+          <div>
+            <strong>Nagy Tamás</strong>
+            <span>BookIt Alapító</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÁRLISTA -->
+<section class="section" id="arlista">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Csomagok</span>
+      <h2>Árazás</h2>
+      <p>Három csomag, három igényszint. Minden projekt egyedi — az árak tájékoztató jellegűek.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pcard">
+        <div class="pcard-head">
+          <span class="pcard-tag">Alap</span>
+          <div class="pcard-price">
+            <strong>89 000</strong>
+            <span>Ft-tól</span>
+          </div>
+          <p>Kisebb vállalkozásoknak, induló projektekhez</p>
+        </div>
+        <ul class="pcard-features">
+          <li class="yes">1–5 aloldal</li>
+          <li class="yes">Reszponzív design</li>
+          <li class="yes">Kapcsolati form</li>
+          <li class="yes">SEO alap beállítások</li>
+          <li class="yes">1 hónap support</li>
+          <li class="no">CMS / admin felület</li>
+          <li class="no">Egyedi animációk</li>
+        </ul>
+        <a href="#kontakt" class="btn-ghost full">Ajánlatot kérek</a>
+      </div>
+      <div class="pcard featured">
+        <div class="pcard-badge">Legnépszerűbb</div>
+        <div class="pcard-head">
+          <span class="pcard-tag">Prémium</span>
+          <div class="pcard-price">
+            <strong>199 000</strong>
+            <span>Ft-tól</span>
+          </div>
+          <p>Növekvő vállalkozásoknak, erős online jelenléthez</p>
+        </div>
+        <ul class="pcard-features">
+          <li class="yes">5–15 aloldal</li>
+          <li class="yes">Egyedi design</li>
+          <li class="yes">CMS integráció</li>
+          <li class="yes">Haladó SEO</li>
+          <li class="yes">2 hónap support</li>
+          <li class="yes">Animációk &amp; effektek</li>
+          <li class="no">E-commerce / webshop</li>
+        </ul>
+        <a href="#kontakt" class="btn-primary full">Ajánlatot kérek</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard-head">
+          <span class="pcard-tag">Teljes</span>
+          <div class="pcard-price">
+            <strong>349 000</strong>
+            <span>Ft-tól</span>
+          </div>
+          <p>Komplex projektek, webshopok, alkalmazások</p>
+        </div>
+        <ul class="pcard-features">
+          <li class="yes">Korlátlan aloldal</li>
+          <li class="yes">Egyedi fejlesztés</li>
+          <li class="yes">E-commerce / webshop</li>
+          <li class="yes">API integrációk</li>
+          <li class="yes">3 hónap support</li>
+          <li class="yes">Teljes arculat</li>
+          <li class="yes">Prioritás support</li>
+        </ul>
+        <a href="#kontakt" class="btn-ghost full">Ajánlatot kérek</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDŐPONTFOGLALÁS -->
+<section class="section bg-light" id="idopont">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Egyeztetés</span>
+      <h2>Visszahívást kérek</h2>
+      <p>30 perces, kötelezettségmentes konzultáció — megbeszéljük az Ön projektjét és lehetőségeit.</p>
+    </div>
+    <div class="calendly-wrap">
+      <!-- Calendly inline widget -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/magyar-david777/30min" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="section" id="kontakt">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="section-tag">Kapcsolat</span>
+        <h2>Kezdjük el<br><em>együtt</em></h2>
+        <p>Legyen szó weboldalról, logóról vagy alkalmazásról — szívesen segítek megvalósítani az elképzeléseit.</p>
+        <div class="contact-infos">
+          <div class="cinfo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>info@mdbdesign.hu</span>
+          </div>
+          <div class="cinfo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.25-.44c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+            </svg>
+            <span>+36 30 419 5286</span>
+          </div>
+          <div class="cinfo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>Hétfő–Péntek, 09:00–17:00</span>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Név *</label>
+              <input type="text" id="fname" name="nev" placeholder="Az Ön neve" required>
+            </div>
+            <div class="form-group">
+              <label for="femail">E-mail *</label>
+              <input type="email" id="femail" name="email" placeholder="email@cim.hu" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fphone">Telefonszám</label>
+            <input type="tel" id="fphone" name="telefon" placeholder="+36 30 ...">
+          </div>
+          <div class="form-group">
+            <label for="fservice">Melyik szolgáltatás érdekli?</label>
+            <select id="fservice" name="szolgaltatas">
+              <option value="">Válasszon...</option>
+              <option>Weblaptervezés</option>
+              <option>Alkalmazásfejlesztés</option>
+              <option>Logótervezés</option>
+              <option>Teljes csomag</option>
+              <option>Egyéb / nem tudom</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fmsg">Üzenet</label>
+            <textarea id="fmsg" name="uzenet" rows="4" placeholder="Röviden írja le a projektjét..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary full">Üzenet küldése</button>
+          <div class="form-success" id="formSuccess">
+            ✓ Köszönöm! Hamarosan felveszem Önnel a kapcsolatot.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="MDBdesign" class="footer-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="footer-logo-text" style="display:none">MDB<em>design</em></span>
+        <p>Digitális jelenlét, ami megkülönböztet.</p>
+      </div>
+      <div class="footer-links">
+        <div class="fl-col">
+          <h4>Navigáció</h4>
+          <a href="#szolgaltatasok">Szolgáltatások</a>
+          <a href="#referenciak">Referenciák</a>
+          <a href="#rolam">Rólam</a>
+          <a href="#arlista">Árlista</a>
+        </div>
+        <div class="fl-col">
+          <h4>Kapcsolat</h4>
+          <a href="mailto:info@mdbdesign.hu">info@mdbdesign.hu</a>
+          <a href="tel:+36304195286">+36 30 419 5286</a>
+          <span>Hétfő–Péntek</span>
+          <span>09:00–18:00</span>
+        </div>
+        <div class="fl-col">
+          <h4>Közösségi média</h4>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 MDBdesign Studio — Minden jog fenntartva</span>
+      <div class="footer-legal">
+        <a href="#">Adatvédelmi tájékoztató</a>
+        <a href="#">ÁSZF</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
