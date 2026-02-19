@@ -2,10 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ===== LOADER ===== */
 const loader = document.getElementById('loader');
-window.addEventListener('load', () => {
-  setTimeout(() => loader.classList.add('out'), 1400);
-});
-setTimeout(() => loader.classList.add('out'), 3000);
+function hideLoader() {
+  setTimeout(() => loader.classList.add('out'), 800);
+}
+if (document.readyState === 'complete') {
+  hideLoader();
+} else {
+  window.addEventListener('load', hideLoader);
+  // Fallback - mindenképpen eltűnik 2.5 másodperc után
+  setTimeout(hideLoader, 2500);
+}
 
 /* ===== HEADER SCROLL ===== */
 const header = document.getElementById('header');
