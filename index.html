@@ -31,7 +31,7 @@
     .logo-text{font-family:'Clash Display',system-ui,sans-serif;font-size:20px;font-weight:600;letter-spacing:2px;color:#1a1a1a;display:none}
     .logo-text em{color:#e63030;font-style:normal}
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
-    .hero-title{font-family:'Clash Display',system-ui,sans-serif;font-size:clamp(48px,7vw,86px);font-weight:700;line-height:1.0;color:#1a1a1a;margin-bottom:24px;letter-spacing:-2px}
+    .theme-toggle{background:none;border:1.5px solid #ddd;border-radius:6px;padding:5px 10px;cursor:pointer;display:flex;align-items:center} .toggle-label{font-size:10px;font-weight:700;letter-spacing:1.5px;color:#888} .hero-title{font-family:'Clash Display',system-ui,sans-serif;font-size:clamp(48px,7vw,86px);font-weight:700;line-height:1.0;color:#1a1a1a;margin-bottom:24px;letter-spacing:-2px}
     .hero-title em{font-style:italic;color:#e63030}
   </style>
 
@@ -40,7 +40,7 @@
   <noscript><link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=cabinet-grotesk@400,500,700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=5">
 
   <!-- Schema.org LocalBusiness structured data -->
   <script type="application/ld+json">
@@ -63,7 +63,7 @@
       "name": "Webdesign szolgáltatások",
       "itemListElement": [
         {"@type":"Offer","itemOffered":{"@type":"Service","name":"Weblaptervezés"}},
-        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Alkalmazásfejlesztés"}},
+        
         {"@type":"Offer","itemOffered":{"@type":"Service","name":"Logótervezés"}}
       ]
     }
@@ -111,7 +111,7 @@
       <li><a href="#kontakt">Kapcsolat</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Témaváltás">🌙</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Témaváltás"><span class="toggle-label">DARK</span></button>
       <a href="#idopont" class="btn-nav">Időpontfoglalás</a>
       <button class="burger" id="burger" aria-label="Menü">
         <span></span><span></span><span></span>
@@ -219,49 +219,7 @@
         </div>
         <div class="sc-arrow">→</div>
       </div>
-      <div class="service-card" data-service="app">
-        <div class="sc-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1"/>
-          </svg>
-        </div>
-        <h3>Alkalmazásfejlesztés</h3>
-        <p>Saját alkalmazások fejlesztése mobilra és webre, amelyek megkönnyítik vállalkozása működését.</p>
-        <div class="sc-details">
-          <ul>
-            <li>Web alkalmazások</li>
-            <li>Mobil-barát PWA megoldások</li>
-            <li>API integrációk</li>
-            <li>Adminisztrációs felületek</li>
-            <li>Adatbázis tervezés</li>
-            <li>Folyamatos karbantartás</li>
-          </ul>
-          <a href="#kontakt" class="sc-cta">Ajánlatot kérek →</a>
-        </div>
-        <div class="sc-arrow">→</div>
-      </div>
-      <div class="service-card" data-service="logo">
-        <div class="sc-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <h3>Logótervezés</h3>
-        <p>Emlékezetes, professzionális logó és arculat tervezés, amely megkülönbözteti vállalkozását.</p>
-        <div class="sc-details">
-          <ul>
-            <li>Logó koncepciók (3 variáció)</li>
-            <li>Teljes brand identity</li>
-            <li>Névjegykártya design</li>
-            <li>Közösségi média csomagok</li>
-            <li>Vektoros forrásfájlok</li>
-            <li>Korlátlan felhasználási jog</li>
-          </ul>
-          <a href="#kontakt" class="sc-cta">Ajánlatot kérek →</a>
-        </div>
-        <div class="sc-arrow">→</div>
-      </div>
-    </div>
+      
     <div class="services-quote">
       <span class="quote-mark">"</span>
       <p>Az ember általában olcsóbb a vizuális dolgokra koncentrál és nem az információra. Egy jól megtervezett weboldal nem csak szép — dolgozik Önért, még akkor is, amikor Ön nem.</p>
@@ -297,7 +255,7 @@
         </div>
       </div>
       <div class="pitem" data-cat="web">
-        <div class="pitem-img" style="background:linear-gradient(135deg,#f5f0eb,#e8ddd0)">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#f5f0eb,#e8ddd0)" class="pitem-light">
           <div class="pitem-overlay">
             <span>Kovács Ügyvédi Iroda</span>
             <em>Prémium weboldal</em>
@@ -309,7 +267,7 @@
         </div>
       </div>
       <div class="pitem" data-cat="logo">
-        <div class="pitem-img" style="background:linear-gradient(135deg,#fff,#f0f0f0)">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#fff,#f0f0f0)" class="pitem-light">
           <div class="pitem-overlay">
             <span>FlowBake Pékség</span>
             <em>Logó &amp; arculat</em>
@@ -548,7 +506,7 @@
           <li class="yes">Haladó SEO</li>
           <li class="yes">2 hónap support</li>
           <li class="yes">Animációk &amp; effektek</li>
-          <li class="no">E-commerce / webshop</li>
+          
         </ul>
         <a href="#kontakt" class="btn-primary full">Ajánlatot kérek</a>
       </div>
@@ -564,8 +522,8 @@
         <ul class="pcard-features">
           <li class="yes">Korlátlan aloldal</li>
           <li class="yes">Egyedi fejlesztés</li>
-          <li class="yes">E-commerce / webshop</li>
-          <li class="yes">API integrációk</li>
+          
+          
           <li class="yes">3 hónap support</li>
           <li class="yes">Teljes arculat</li>
           <li class="yes">Prioritás support</li>
@@ -745,11 +703,10 @@
             <label for="fservice">Melyik szolgáltatás érdekli?</label>
             <select id="fservice" name="szolgaltatas">
               <option value="">Válasszon...</option>
-              <option>Weblaptervezés</option>
-              <option>Alkalmazásfejlesztés</option>
-              <option>Logótervezés</option>
-              <option>Teljes csomag</option>
-              <option>Egyéb / nem tudom</option>
+              <option>Alap csomag (89 000 Ft-tól)</option>
+              <option>Prémium csomag (199 000 Ft-tól)</option>
+              <option>Teljes csomag (349 000 Ft-tól)</option>
+              <option>Nem tudom még</option>
             </select>
           </div>
           <div class="form-group">

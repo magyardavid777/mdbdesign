@@ -55,7 +55,7 @@ const revealObs = new IntersectionObserver(entries => {
       revealObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
 function addReveal(selector, cls = 'reveal') {
   document.querySelectorAll(selector).forEach((el, i) => {
@@ -185,15 +185,18 @@ if (window.innerWidth > 1024 && !window.matchMedia('(prefers-reduced-motion: red
 
 /* ===== DARK MODE ===== */
 const themeToggle = document.getElementById('themeToggle');
+const toggleLabel = document.querySelector('.toggle-label');
 const savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+if (savedTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  if (toggleLabel) toggleLabel.textContent = 'LIGHT';
+}
 if (themeToggle) {
-  themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
   themeToggle.addEventListener('click', () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
     localStorage.setItem('theme', isDark ? 'light' : 'dark');
-    themeToggle.textContent = isDark ? '🌙' : '☀️';
+    if (toggleLabel) toggleLabel.textContent = isDark ? 'DARK' : 'LIGHT';
   });
 }
 
@@ -230,14 +233,28 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-/* ===== PROCESS STEPS REVEAL ===== */
+/* ===== PROCESS STEPS - stagger animation without reveal (above fold issue) ===== */
 document.querySelectorAll('.pstep').forEach((el, i) => {
-  el.classList.add('reveal');
-  el.classList.add('delay-' + Math.min(i, 3));
-  revealObs.observe(el);
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity .6s ease ' + (i * 0.12) + 's, transform .6s ease ' + (i * 0.12) + 's';
+  setTimeout(() => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  }, 100 + i * 120);
 });
 document.querySelectorAll('.faq-item').forEach((el, i) => {
-  el.classList.add('reveal');
-  if (i > 0) el.classList.add('delay-' + Math.min(i % 3, 3));
-  revealObs.observe(el);
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity .5s ease ' + (i * 0.08) + 's, transform .5s ease ' + (i * 0.08) + 's';
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.05 });
+  obs.observe(el);
 });
