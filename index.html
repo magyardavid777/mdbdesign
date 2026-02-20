@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDBdesign — Digitális jelenlét, ami megkülönböztet</title>
+  <meta name="description" content="Weblaptervezés, alkalmazásfejlesztés és logótervezés. Professzionális digitális megoldások vállalkozásoknak.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='%232a2a2a' stroke-width='6'/><path d='M70 15 L30 80 Q35 88 42 85 L78 25 Z' fill='%23e63030'/><path d='M30 80 Q25 95 28 98 Q34 94 42 85 Z' fill='%23c0392b'/><path d='M28 98 Q40 90 50 75' stroke='%232a2a2a' stroke-width='2' fill='none'/></svg>">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='none' stroke='%232a2a2a' stroke-width='6'/><path d='M68 14 L28 78 Q33 87 41 84 L76 24 Z' fill='%23e63030'/><path d='M28 78 Q22 95 27 98 Q34 93 41 84 Z' fill='%23c0392b'/></svg>">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <!-- Preconnect to font domains -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+
+  <!-- Critical CSS inline (above the fold) -->
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Cabinet Grotesk',system-ui,-apple-system,sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    .loader{position:fixed;inset:0;background:#fff;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+    .loader-logo{font-family:'Clash Display',system-ui,sans-serif;font-size:28px;font-weight:600;letter-spacing:6px;color:#1a1a1a}
+    .loader-logo span{color:#e63030}
+    .loader-line{width:140px;height:1px;background:#e8e8e8;overflow:hidden}
+    .loader-fill{height:100%;background:#e63030;animation:loaderAnim 1.6s ease forwards}
+    @keyframes loaderAnim{from{width:0}to{width:100%}}
+    .header{position:fixed;top:0;left:0;right:0;z-index:800;transition:background .3s,box-shadow .3s}
+    .nav{display:flex;align-items:center;height:72px;gap:48px;max-width:1180px;margin:0 auto;padding:0 40px}
+    .logo-text{font-family:'Clash Display',system-ui,sans-serif;font-size:20px;font-weight:600;letter-spacing:2px;color:#1a1a1a;display:none}
+    .logo-text em{color:#e63030;font-style:normal}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+    .theme-toggle{background:none;border:1.5px solid #ddd;border-radius:6px;padding:5px 10px;cursor:pointer;display:flex;align-items:center} .toggle-label{font-size:10px;font-weight:700;letter-spacing:1.5px;color:#888} .hero-title{font-family:'Clash Display',system-ui,sans-serif;font-size:clamp(48px,7vw,86px);font-weight:700;line-height:1.0;color:#1a1a1a;margin-bottom:24px;letter-spacing:-2px}
+    .hero-title em{font-style:italic;color:#e63030}
+  </style>
+
+  <!-- Non-blocking font load -->
+  <link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=cabinet-grotesk@400,500,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=cabinet-grotesk@400,500,700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css?v=5">
+
+  <!-- Schema.org LocalBusiness structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MDBdesign",
+    "description": "Weblaptervezés, alkalmazásfejlesztés és logótervezés. Professzionális digitális megoldások vállalkozásoknak.",
+    "url": "https://magyardavid777.github.io/mdbdesign/",
+    "telephone": "+36301234567",
+    "email": "info@mdbdesign.hu",
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "89000-349000 HUF",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "HU"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Webdesign szolgáltatások",
+      "itemListElement": [
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Weblaptervezés"}},
+        
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Logótervezés"}}
+      ]
+    }
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MDBdesign — Digitális jelenlét, ami megkülönböztet">
+  <meta property="og:description" content="Professzionális weboldalak, alkalmazások és logók vállalkozásoknak.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://magyardavid777.github.io/mdbdesign/">
+  <meta property="og:locale" content="hu_HU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MDBdesign — Digitális jelenlét, ami megkülönböztet">
+  <meta name="twitter:description" content="Professzionális weboldalak, alkalmazások és logók vállalkozásoknak.">
+
+  <!-- Extra SEO -->
+  <link rel="canonical" href="https://magyardavid777.github.io/mdbdesign/">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="MDBdesign">
+</head>
+<body>
+
+<!-- LOADER -->
+<a href="#fooldal-main" class="skip-link">Ugrás a tartalomhoz</a>
+<div class="loader" id="loader">
+  <div class="loader-logo">MDB<span>design</span></div>
+  <div class="loader-line"><div class="loader-fill"></div></div>
+</div>
+
+<!-- NAV -->
+<header class="header" id="header">
+  <nav class="nav container" role="navigation" aria-label="Főnavigáció">
+    <a href="#" class="logo">
+      <img src="assets/logo.png" alt="MDBdesign logó" class="logo-img" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-text" style="display:none">MDB<em>design</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="#referenciak">Referenciák</a></li>
+      <li><a href="#folyamat">Folyamat</a></li>
+      <li><a href="#rolam">Rólam</a></li>
+      <li><a href="#arlista">Árlista</a></li>
+      <li><a href="#gyik">GYIK</a></li>
+      <li><a href="#kontakt">Kapcsolat</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Témaváltás"><span class="toggle-label">DARK</span></button>
+      <a href="#idopont" class="btn-nav">Időpontfoglalás</a>
+      <button class="burger" id="burger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="fooldal-main" aria-label="Főtartalom">
+<!-- HERO -->
+<section class="hero" id="fooldal">
+  <div class="hero-bg">
+    <div class="hero-circle c1"></div>
+    <div class="hero-circle c2"></div>
+    <div class="hero-feather">
+      <!-- Elegáns dekoratív elem - tollvonás stílus -->
+      <svg viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Nagy kör - finom -->
+        <circle cx="280" cy="260" r="200" stroke="#e8e0da" stroke-width="1.5" opacity="0.8"/>
+        <!-- Kisebb belső kör -->
+        <circle cx="280" cy="260" r="140" stroke="#e8e0da" stroke-width="1" opacity="0.5"/>
+        <!-- Toll test - finom gradiens hatás -->
+        <path d="M380 60 C360 120 300 200 240 310 C220 348 210 375 215 400" 
+              stroke="#e63030" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+        <!-- Toll részletek - vékony vonalak -->
+        <path d="M375 70 C340 100 290 160 255 230" 
+              stroke="#e63030" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
+        <path d="M370 85 C330 115 275 180 238 255" 
+              stroke="#e63030" stroke-width="0.8" stroke-linecap="round" opacity="0.15"/>
+        <path d="M365 100 C320 130 260 200 222 278" 
+              stroke="#e63030" stroke-width="0.6" stroke-linecap="round" opacity="0.12"/>
+        <!-- Toll vége - kúszó vonal -->
+        <path d="M215 400 C212 430 216 455 210 480" 
+              stroke="#c0392b" stroke-width="1" stroke-linecap="round" opacity="0.25"/>
+        <!-- Dekoratív pontok -->
+        <circle cx="380" cy="58" r="3" fill="#e63030" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      Weblaptervezés &amp; Fejlesztés
+    </div>
+    <h1 class="hero-title">
+      Digitális jelenlét,<br>
+      <span style="color:#e63030">ami megkülönböztet.</span>
+    </h1>
+    <p class="hero-sub">Professzionális weboldalak, alkalmazások és logók — amelyek valóban dolgoznak az Ön vállalkozásáért.</p>
+    <div class="hero-cta">
+      <a href="#kontakt" class="btn-primary">Ingyenes ajánlat kérése</a>
+      <a href="#referenciak" class="btn-ghost">Referenciák megtekintése</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <strong>50+</strong>
+        <span>Elkészített projekt</span>
+      </div>
+      <div class="hstat-sep"></div>
+      <div class="hstat">
+        <strong>100%</strong>
+        <span>Elégedett ügyfél</span>
+      </div>
+      <div class="hstat-sep"></div>
+      <div class="hstat">
+        <strong>5+</strong>
+        <span>Év tapasztalat</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Görgessen</span>
+  </div>
+</section>
+
+<!-- SZOLGÁLTATÁSOK -->
+<section class="section" id="szolgaltatasok">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Mit kínálunk</span>
+      <h2>Válasszon szolgáltatásaink közül</h2>
+      <p>Minden projekt egyedi figyelmet kap. Nézze meg részletesen, miben tudunk segíteni.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card active" data-service="web">
+        <div class="sc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3>Weblaptervezés</h3>
+        <p>Egyedi, reszponzív weboldalak tervezése és kivitelezése, amelyek tükrözik vállalkozása személyiségét.</p>
+        <div class="sc-details">
+          <ul>
+            <li>Egyedi design tervezés</li>
+            <li>Mobil-barát kivitelezés</li>
+            <li>SEO-optimalizált struktúra</li>
+            <li>Gyors betöltési sebesség</li>
+            <li>CMS integráció (igény szerint)</li>
+            <li>2 hónap ingyenes support</li>
+          </ul>
+          <a href="#kontakt" class="sc-cta">Ajánlatot kérek →</a>
+        </div>
+        <div class="sc-arrow">→</div>
+      </div>
+      
+    <div class="services-quote">
+      <span class="quote-mark">"</span>
+      <p>Az ember általában olcsóbb a vizuális dolgokra koncentrál és nem az információra. Egy jól megtervezett weboldal nem csak szép — dolgozik Önért, még akkor is, amikor Ön nem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCIÁK -->
+<section class="section bg-light" id="referenciak">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Munkáink</span>
+      <h2>Referenciák</h2>
+      <p>Néhány kiválasztott projekt, amelyen büszkék vagyunk.</p>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Összes</button>
+      <button class="filter-btn" data-filter="web">Weboldal</button>
+      <button class="filter-btn" data-filter="app">Alkalmazás</button>
+      <button class="filter-btn" data-filter="logo">Logó</button>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid">
+      <div class="pitem" data-cat="web">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+          <div class="pitem-overlay">
+            <span>Team AGTG</span>
+            <em>Esport weboldal</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>Team AGTG</h4>
+          <span>Weboldal</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="web">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#f5f0eb,#e8ddd0)" class="pitem-light">
+          <div class="pitem-overlay">
+            <span>Kovács Ügyvédi Iroda</span>
+            <em>Prémium weboldal</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>Kovács Ügyvédi Iroda</h4>
+          <span>Weboldal</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="logo">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#fff,#f0f0f0)" class="pitem-light">
+          <div class="pitem-overlay">
+            <span>FlowBake Pékség</span>
+            <em>Logó &amp; arculat</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>FlowBake Pékség</h4>
+          <span>Logó</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="app">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#0f2027,#203a43)">
+          <div class="pitem-overlay">
+            <span>BookIt Foglalórendszer</span>
+            <em>Web alkalmazás</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>BookIt Foglalórendszer</h4>
+          <span>Alkalmazás</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="web">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#2d1b69,#11998e)">
+          <div class="pitem-overlay">
+            <span>Zöld Kert Kertészet</span>
+            <em>Weboldal &amp; webshop</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>Zöld Kert Kertészet</h4>
+          <span>Weboldal</span>
+        </div>
+      </div>
+      <div class="pitem" data-cat="logo">
+        <div class="pitem-img" style="background:linear-gradient(135deg,#1a1a1a,#333)">
+          <div class="pitem-overlay">
+            <span>NightOwl Étterem</span>
+            <em>Teljes arculat</em>
+          </div>
+        </div>
+        <div class="pitem-info">
+          <h4>NightOwl Étterem</h4>
+          <span>Logó</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOLYAMATÁBRA -->
+<section class="section" id="folyamat">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Hogyan dolgozunk</span>
+      <h2>Egyszerű és átlátható folyamat</h2>
+      <p>Négy lépésben az elképzeléstől a kész weboldalig — végig Ön is látja mi történik.</p>
+    </div>
+    <div class="process-steps">
+      <div class="pstep">
+        <div class="pstep-num">01</div>
+        <div class="pstep-connector"></div>
+        <div class="pstep-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>Egyeztetés</h3>
+        <p>Ingyenes 30 perces konzultáción megbeszéljük az Ön elképzeléseit, céljait és a projekt részleteit.</p>
+        <span class="pstep-time">~30 perc</span>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">02</div>
+        <div class="pstep-connector"></div>
+        <div class="pstep-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <h3>Tervezés</h3>
+        <p>Elkészítjük a design terveket Figma-ban. Ön véleményezi, kérhet módosításokat — addig finomítjuk, amíg tökéletes.</p>
+        <span class="pstep-time">3–7 nap</span>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">03</div>
+        <div class="pstep-connector"></div>
+        <div class="pstep-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3>Fejlesztés</h3>
+        <p>A jóváhagyott terv alapján elkészítjük az oldalt. Folyamatos visszajelzés, Ön minden fázisban látja a haladást.</p>
+        <span class="pstep-time">1–3 hét</span>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">04</div>
+        <div class="pstep-connector last"></div>
+        <div class="pstep-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3>Átadás & Support</h3>
+        <p>Élesítjük az oldalt, betanítjuk a kezelést, és az egyeztetett ideig support csomaggal segítjük az indulást.</p>
+        <span class="pstep-time">+ support időszak</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÓLAM -->
+<section class="section" id="rolam">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-placeholder">
+          <div class="about-img-inner">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>Fotó hamarosan</span>
+          </div>
+        </div>
+        <div class="about-accent-line"></div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Rólam</span>
+        <h2>Szia, én vagyok<br><span style="color:#e63030">az MDBdesign alapítója</span></h2>
+        <p>Szenvedélyem a digitális világ és az emberek kapcsolata. Hiszem, hogy minden vállalkozásnak — legyen az egy kis helyi bolt vagy egy növekvő startup — megérdemli a profi online jelenlétet.</p>
+        <p>Évek óta segítem ügyfeleimet abban, hogy weboldaluk ne csak szép legyen, hanem ténylegesen ügyfelet hozzon és értéket teremtsen.</p>
+        <div class="skills">
+          <div class="skill-tag">HTML / CSS</div>
+          <div class="skill-tag">JavaScript</div>
+          <div class="skill-tag">UI/UX Design</div>
+          <div class="skill-tag">Figma</div>
+          <div class="skill-tag">WordPress</div>
+          <div class="skill-tag">Branding</div>
+        </div>
+        <a href="#kontakt" class="btn-primary" style="margin-top:32px;display:inline-block">Vegyük fel a kapcsolatot</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section bg-light" id="velemenyek">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Visszajelzések</span>
+      <h2>Mit mondanak ügyfeleink</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Pontosan azt kaptuk, amit elképzeltünk — sőt, még annál is többet. A weboldal azóta megduplázta az online érdeklődőink számát."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">KP</div>
+          <div>
+            <strong>Kovács Péter</strong>
+            <span>Ügyvezető, Kovács Kft.</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard featured">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Gyors, precíz munka és kiváló kommunikáció. Az új logónk azóta az egyik legfontosabb identitásjelünk lett. Mindenkinek ajánlom!"</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">SN</div>
+          <div>
+            <strong>Szabó Nikolett</strong>
+            <span>Tulajdonos, FlowBake</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"A foglalórendszerünk azóta sokkal gördülékenyebben működik. Rengeteg adminisztrációs időt spórolunk meg minden héten."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">NT</div>
+          <div>
+            <strong>Nagy Tamás</strong>
+            <span>BookIt Alapító</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÁRLISTA -->
+<section class="section" id="arlista">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Csomagok</span>
+      <h2>Átlátható árazás</h2>
+      <p>Három csomag, három igényszint. Minden projekt egyedi — az árak tájékoztató jellegűek.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pcard">
+        <div class="pcard-head">
+          <span class="pcard-tag">Alap</span>
+          <div class="pcard-price">
+            <strong>89 000</strong>
+            <span>Ft-tól</span>
+          </div>
+          <p>Kisebb vállalkozásoknak, induló projektekhez</p>
+        </div>
+        <ul class="pcard-features">
+          <li class="yes">1–5 aloldal</li>
+          <li class="yes">Reszponzív design</li>
+          <li class="yes">Kapcsolati form</li>
+          <li class="yes">SEO alap beállítások</li>
+          <li class="yes">1 hónap support</li>
+          <li class="no">CMS / admin felület</li>
+          <li class="no">Egyedi animációk</li>
+        </ul>
+        <a href="#kontakt" class="btn-ghost full">Ajánlatot kérek</a>
+      </div>
+      <div class="pcard featured">
+        <div class="pcard-badge">Legnépszerűbb</div>
+        <div class="pcard-head">
+          <span class="pcard-tag">Prémium</span>
+          <div class="pcard-price">
+            <strong>199 000</strong>
+            <span>Ft-tól</span>
+          </div>
+          <p>Növekvő vállalkozásoknak, erős online jelenléthez</p>
+        </div>
+        <ul class="pcard-features">
+          <li class="yes">5–15 aloldal</li>
+          <li class="yes">Egyedi design</li>
+          <li class="yes">CMS integráció</li>
+          <li class="yes">Haladó SEO</li>
+          <li class="yes">2 hónap support</li>
+          <li class="yes">Animációk &amp; effektek</li>
+          
+        </ul>
+        <a href="#kontakt" class="btn-primary full">Ajánlatot kérek</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard-head">
+          <span class="pcard-tag">Teljes</span>
+          <div class="pcard-price">
+            <strong>349 000</strong>
+            <span>Ft-tól</span>
+          </div>
+          <p>Komplex projektek, webshopok, alkalmazások</p>
+        </div>
+        <ul class="pcard-features">
+          <li class="yes">Korlátlan aloldal</li>
+          <li class="yes">Egyedi fejlesztés</li>
+          
+          
+          <li class="yes">3 hónap support</li>
+          <li class="yes">Teljes arculat</li>
+          <li class="yes">Prioritás support</li>
+        </ul>
+        <a href="#kontakt" class="btn-ghost full">Ajánlatot kérek</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GYIK -->
+<section class="section" id="gyik">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">GYIK</span>
+      <h2>Gyakran ismételt kérdések</h2>
+      <p>Ha nem találja a választ, írjon bátran!</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Mennyi idő alatt készül el egy weboldal?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Az egyszerűbb weboldalak 1–2 hét alatt elkészülnek, a komplexebb projektek (webshop, egyedi alkalmazás) 3–6 hétig tartanak. Az első egyeztetésen pontosabb becslést adok az Ön projektjéhez.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Mi kell az induláshoz? Mit kell előkészítenem?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Alapvetően elég az elképzelés és a tartalom (szövegek, képek, logó). Ha nincs még logója vagy szövege, abban is segítünk. Az induláshoz szükséges domain és tárhelyet is be tudjuk szerezni Önnek.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Az elkészült oldalt én is tudom majd szerkeszteni?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Igen! Ha CMS-t (pl. WordPress) választ, az oldal tartalmát Ön is könnyen szerkesztheti technikai tudás nélkül. Az átadáskor betanítást is tartunk, hogy magabiztosan kezelje az oldalt.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Hogyan zajlik a fizetés?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Általában 50% előleg a projekt indulásakor, 50% az átadáskor. Nagyobb projekteknél mérföldkövek szerint is lehetséges a részletfizetés. Számlát minden esetben állítunk ki.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Mi történik az átadás után? Van garancia?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Minden csomag tartalmaz support időszakot (1–3 hónap), amely alatt az esetleges hibákat díjmentesen javítjuk. Ezen túl havi karbantartási csomagot is kínálunk, ha hosszú távú partnert keres.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Tudnak segíteni domain és tárhely megvásárlásában?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Igen, teljes körűen segítünk a domain regisztrációban és a megfelelő tárhely kiválasztásában. A projekt indításakor ezeket is intézzük, Önnek csak jóvá kell hagyni.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDŐPONTFOGLALÁS -->
+<section class="section bg-light" id="idopont">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Egyeztetés</span>
+      <h2>Foglaljon ingyenes konzultációt</h2>
+      <p>30 perces, kötelezettségmentes konzultáció — megbeszéljük az Ön projektjét és lehetőségeit.</p>
+    </div>
+    <div class="calendly-wrap">
+      <div class="calendly-placeholder" id="calendlyPlaceholder">
+        <div class="cal-inner">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e63030" stroke-width="1.5">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
+          </svg>
+          <h3>Calendly naptár</h3>
+          <p>Ide kerül a Calendly időpontfoglaló widget.<br>
+          A beágyazáshoz cserélje le az alábbi linket a saját Calendly URL-jére.</p>
+          <code>data-url="https://calendly.com/az-on-neve"</code>
+          <a href="https://calendly.com" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block">
+            Calendly beállítása →
+          </a>
+        </div>
+      </div>
+      <!-- Calendly inline widget -->
+      <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/az-on-neve" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="section" id="kontakt">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="section-tag">Kapcsolat</span>
+        <h2>Kezdjük el<br><span style="color:#e63030">együtt</span></h2>
+        <p>Legyen szó weboldalról, logóról vagy alkalmazásról — szívesen segítek megvalósítani az elképzeléseit.</p>
+        <div class="contact-infos">
+          <div class="cinfo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="127b7c747d527f76707677617b757c3c7a67">[email&#160;protected]</a></span>
+          </div>
+          <div class="cinfo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.25-.44c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+            </svg>
+            <span>+36 30 123 4567</span>
+          </div>
+          <div class="cinfo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>Hétfő–Péntek, 09:00–18:00</span>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Név *</label>
+              <input type="text" id="fname" name="nev" placeholder="Az Ön neve" required>
+            </div>
+            <div class="form-group">
+              <label for="femail">E-mail *</label>
+              <input type="email" id="femail" name="email" placeholder="email@cim.hu" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fphone">Telefonszám</label>
+            <input type="tel" id="fphone" name="telefon" placeholder="+36 30 ...">
+          </div>
+          <div class="form-group">
+            <label for="fservice">Melyik szolgáltatás érdekli?</label>
+            <select id="fservice" name="szolgaltatas">
+              <option value="">Válasszon...</option>
+              <option>Alap csomag (89 000 Ft-tól)</option>
+              <option>Prémium csomag (199 000 Ft-tól)</option>
+              <option>Teljes csomag (349 000 Ft-tól)</option>
+              <option>Nem tudom még</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fmsg">Üzenet</label>
+            <textarea id="fmsg" name="uzenet" rows="4" placeholder="Röviden írja le a projektjét..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary full">Üzenet küldése</button>
+          <div class="form-success" id="formSuccess">
+            ✓ Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="MDBdesign" class="footer-logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="footer-logo-text" style="display:none">MDB<em>design</em></span>
+        <p>Digitális jelenlét, ami megkülönböztet.</p>
+      </div>
+      <div class="footer-links">
+        <div class="fl-col">
+          <p class="footer-col-title">Navigáció</p>
+          <a href="#szolgaltatasok">Szolgáltatások</a>
+          <a href="#referenciak">Referenciák</a>
+          <a href="#folyamat">Folyamat</a>
+          <a href="#rolam">Rólam</a>
+          <a href="#arlista">Árlista</a>
+          <a href="#gyik">GYIK</a>
+        </div>
+        <div class="fl-col">
+          <p class="footer-col-title">Kapcsolat</p>
+          <a href="/cdn-cgi/l/email-protection#7b12151d143b161f191f1e08121c1555130e"><span class="__cf_email__" data-cfemail="325b5c545d725f56505657415b555c1c5a47">[email&#160;protected]</span></a>
+          <a href="tel:+36301234567">+36 30 123 4567</a>
+          <span>Hétfő–Péntek</span>
+          <span>09:00–18:00</span>
+        </div>
+        <div class="fl-col">
+          <p class="footer-col-title">Közösségi média</p>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 MDBdesign Studio — Minden jog fenntartva</span>
+      <div class="footer-legal">
+        <a href="#">Adatvédelmi tájékoztató</a>
+        <a href="#">ÁSZF</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie értesítés" aria-live="polite">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>🍪 Süti beállítások</strong>
+      <p>Weboldalunk sütiket (cookie-kat) használ a jobb felhasználói élmény érdekében. Az "Elfogadom" gombra kattintva hozzájárul a sütik használatához. További információ az <a href="#" class="cookie-link">Adatvédelmi tájékoztatóban</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button class="btn-ghost cookie-decline" id="cookieDecline">Csak szükséges</button>
+      <button class="btn-primary cookie-accept" id="cookieAccept">Elfogadom</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
